@@ -1,0 +1,131 @@
+# Next.js 初始化模板项目 - Cursor 规则
+
+## 项目概述
+这是一个 Next.js 14+ 初始化模板项目，采用 App Router 架构。所有新功能模块都应遵循 Next.js 官方文档的最佳实践。
+
+## 核心原则
+- **严格遵循 Next.js 官方文档** - 所有实现都应参考 nextjs.org 的官方示例
+- **模板化设计** - 保持代码的可复用性和一致性
+- **最佳实践优先** - 优先使用 Next.js 推荐的模式和解决方案
+- **优先使用 shadcn/ui** - 制作页面时优先使用 shadcn/ui 组件库
+
+## 模块开发规范
+
+### 新增页面和路由
+- 严格按照 Next.js App Router 约定式路由
+- 页面文件使用 `page.tsx` 命名
+- 布局文件使用 `layout.tsx` 命名
+- 加载状态使用 `loading.tsx`
+- 错误处理使用 `error.tsx`
+- 404 页面使用 `not-found.tsx`
+
+### 组件开发
+- **优先使用 shadcn/ui 组件库** - 制作页面时优先考虑使用 shadcn/ui 组件
+- 使用 shadcn/ui 组件前先通过 `npx shadcn@latest add [component-name]` 安装
+- 参考 shadcn/ui 官方文档和示例：https://ui.shadcn.com/docs
+- 服务器组件默认，客户端组件明确标记 `"use client"`
+- 组件命名使用 PascalCase
+- 每个组件都要有清晰的 TypeScript 类型定义
+- 参考 Next.js 官方文档中的组件模式
+
+### 数据获取
+- 优先使用 Server Components 进行数据获取
+- 使用 Next.js 内置的 fetch 缓存机制
+- 实现适当的错误边界和加载状态
+- 参考 Next.js 官方文档中的数据获取模式
+
+### API 路由
+- 使用 App Router 的 Route Handlers (`app/api/route.ts`)
+- 遵循 RESTful API 设计原则
+- 实现适当的错误处理和状态码
+- 参考 Next.js 官方 API 示例
+
+### 样式和 UI
+- **优先使用 shadcn/ui 组件** - 页面制作时优先使用 shadcn/ui 组件
+- 使用 Tailwind CSS（项目已配置）
+- 参考 shadcn/ui 官方文档中的样式和布局示例
+- 保持响应式设计
+- 遵循无障碍访问标准
+- 使用 shadcn/ui 的设计系统和主题
+
+### 状态管理
+- 优先使用 React 内置状态管理
+- 复杂状态考虑使用 Next.js 推荐的解决方案
+- 避免过度工程化
+
+### 性能优化
+- 使用 Next.js 内置的图片优化 (`next/image`)
+- 实现适当的代码分割
+- 使用 Suspense 和动态导入
+- 参考 Next.js 性能优化指南
+
+### 安全
+- 使用 Next.js 内置的安全功能
+- 实现适当的认证和授权
+- 防止常见的安全漏洞
+- 参考 Next.js 安全最佳实践
+
+## 开发流程
+
+### 新增功能模块时
+1. **查阅官方文档** - 首先查看 nextjs.org 相关功能的官方文档
+2. **参考 shadcn/ui 组件** - 优先查看 shadcn/ui 是否有合适的组件
+3. **参考官方示例** - 使用官方提供的代码示例作为基础
+4. **保持一致性** - 确保与项目现有代码风格一致
+5. **测试验证** - 确保功能按预期工作
+
+### 代码组织
+- 遵循 Next.js 推荐的文件结构
+- 使用清晰的文件夹命名
+- 保持模块化设计
+- 避免过度嵌套
+
+### 错误处理
+- 使用 Next.js 内置的错误处理机制
+- 实现用户友好的错误页面
+- 记录适当的错误日志
+
+## AI 助手指导
+
+### 生成代码时
+- **始终参考 Next.js 官方文档** - 优先使用官方示例和模式
+- **优先使用 shadcn/ui 组件** - 页面制作时优先推荐 shadcn/ui 组件
+- **保持模板化** - 生成的代码应该易于在其他项目中复用
+- **考虑扩展性** - 设计时要考虑未来功能的扩展
+- **文档化** - 为复杂功能提供清晰的注释和文档
+
+### 代码质量
+- 使用 TypeScript 严格模式
+- 遵循 ESLint 规则
+- 保持代码简洁和可读性
+- 避免重复代码
+
+### 测试
+- 为关键功能编写测试
+- 使用 Next.js 推荐的测试工具
+- 确保组件和 API 的正确性
+
+## 模板特定规则
+
+### 初始化项目特性
+- 保持项目结构清晰简单
+- 提供良好的开发体验
+- 包含必要的开发工具配置
+- 易于理解和修改
+
+### 文档和注释
+- 为每个主要功能提供清晰的文档
+- 使用中文注释说明复杂逻辑
+- 提供使用示例和最佳实践
+
+### 配置管理
+- 使用环境变量管理配置
+- 提供清晰的配置说明
+- 包含开发和生产环境配置
+
+## 参考资源
+- Next.js 官方文档: https://nextjs.org/docs
+- Next.js 示例: https://github.com/vercel/next.js/tree/canary/examples
+- Next.js 最佳实践: https://nextjs.org/docs/basic-features
+- shadcn/ui 官方文档: https://ui.shadcn.com/docs
+- shadcn/ui 组件库: https://ui.shadcn.com/docs/components
